@@ -10,6 +10,8 @@ ExcelDiff
 **N.B. Excel 95 has the same .xls extension as 97-03 version. Make sure to "Save As" 97-03 before proceeding**
 
 Screenshots
+
+
 ![alt tag](https://raw.github.com/raytung/ExcelDiff/master/sample.png)
 
 If one enters a valid path, the field turns green.
