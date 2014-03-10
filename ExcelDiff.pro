@@ -26,5 +26,5 @@ HEADERS  += mainwindow.h\
             ExcelDiff.hpp\
             ExcelFormat.h
 
-FORMS += mainwindow.ui
+#FORMS += mainwindow.ui
 

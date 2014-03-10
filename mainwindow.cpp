@@ -1,25 +1,15 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 
-/*
- * TODO:
- * - enter path, if not exists or error, background tint red. FIN
- * - enter path, if exists, no error, background tint green. FIN
- * -
- */
-
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent)
 {
-   ui->setupUi(this);
     configure();
 }
 
 
 MainWindow::~MainWindow()
 {
-   delete ui;
+    /// ONLY DELETE IN DESTRUCTOR WHEN MEMORY HAS ALLOCATED IN CONSTRUCTOR
+
     /*
     delete line;
     delete line_2;
@@ -52,10 +42,6 @@ void MainWindow::configureCheckBoxes()
     ignoreCase = new QCheckBox("Ignore Case");
     checkTextStyle = new QCheckBox("Check Text Style");
     checkCellStyle = new QCheckBox("Check Cell Style");
-
-//    ignoreCase->setText("Ignore Case");
-//    checkTextStyle->setText("Check Text Style");
-//    checkCellStyle->setText("Check Cell Style");
 }
 
 void MainWindow::configureMainWindow()
@@ -83,9 +69,10 @@ void MainWindow::configureFileDialogs()
 
 void MainWindow::configureQLineEdit()
 {
-    line   = new QLineEdit(mainWindow);
-    line_2 = new QLineEdit(mainWindow);
-    line_3 = new QLineEdit(mainWindow);
+    line   = new QLineEdit();
+    line_2 = new QLineEdit();
+    line_3 = new QLineEdit();
+
     line->setPlaceholderText("1st Directory");
     line_2->setPlaceholderText("2nd Directory");
     line_3->setPlaceholderText("Report Directory");
@@ -100,10 +87,12 @@ void MainWindow::configureQPushButton()
     browse_3 = new QPushButton;
     compare  = new QPushButton;
 
+    //initialize string once.
     QString browse_text = "Browse";
     browse->setText(browse_text);
     browse_2->setText(browse_text);
     browse_3->setText(browse_text);
+
     compare->setText("Compare");
 }
 
